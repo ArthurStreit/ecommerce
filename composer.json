@@ -1,8 +1,8 @@
 {
-    "name": "ArthurStreit/ecommerce",
+    "name": "arthurstreit/ecommerce",
     "authors": [
         {
-            "name": "Arthur Streit",
+            "name": "arthurstreit",
             "email": "arthurstreit@hotmail.com"
         }
     ],
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\ArthurStreit\\php-classes\\src"
+            "Hcode\\": "vendor\\hcodebr\\php-classes\\src"
         }
     }
 }
