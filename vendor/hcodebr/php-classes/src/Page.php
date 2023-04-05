@@ -30,7 +30,7 @@ class Page {
 
         Tpl::configure( $config );
 
-        $this->$tpl = new Tpl;
+        $this->tpl = new Tpl;
 
         $this->setData($this->options["data"]);
 
