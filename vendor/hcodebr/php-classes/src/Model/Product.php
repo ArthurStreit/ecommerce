@@ -38,7 +38,7 @@ class Product extends Model {
 
         $sql = new Sql();
 
-        $results = $sql->select("CALL sp_categories_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vlweight, :desurl)", array(
+        $results = $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vllength, :vlweight, :desurl)", array(
             ":idproduct"=>$this->getidproduct(),
             ":desproduct"=>$this->getdesproduct(),
             ":vlprice"=>$this->getvlprice(),
@@ -59,9 +59,10 @@ class Product extends Model {
 
         $sql = new Sql();
 
-        $sql->select("SELECT * FROM tb_products WHERE idproduct = :idproduct", [
+        $results = $sql->select("SELECT * FROM tb_products WHERE idproduct = :idproduct", [
             ':idproduct'=>$idproduct
         ]);
+
         $this->setData($results[0]);
 
     }

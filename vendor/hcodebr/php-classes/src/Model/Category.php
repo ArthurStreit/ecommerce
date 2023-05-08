@@ -5,6 +5,7 @@ namespace Hcode\Model;
 use \Hcode\DB\Sql;
 use \Hcode\Model;
 use \Hcode\Mailer;
+use \Hcode\Model\Product;
 
 
 class Category extends Model {
@@ -39,9 +40,10 @@ class Category extends Model {
 
         $sql = new Sql();
 
-        $sql->select("SELECT * FROM tb_categories WHERE idcategory = :idcategory", [
+        $results = $sql->select("SELECT * FROM tb_categories WHERE idcategory = :idcategory", [
             ':idcategory'=>$idcategory
         ]);
+
         $this->setData($results[0]);
 
     }
@@ -124,7 +126,7 @@ class Category extends Model {
         WHERE c.idcategory = :idcategory
         LIMIT $start, $itemsPerPage;
         
-        " [
+        ", [
             ':idcategory'=>$this->getidcategory()
         ]);
 
