@@ -102,11 +102,10 @@ class Cart extends Model {
             ':vlfreight'=>$this->getvlfreight(),
             ':nrdays'=>$this->getnrdays()
         ]);
-
-        $this->setData($results[0]);
-
-
-
+        
+        if (count($results) > 0) {
+            $this->setData($results[0]);
+        }
     }
 
     public function addProduct(Product $product){
